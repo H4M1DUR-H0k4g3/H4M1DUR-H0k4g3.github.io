@@ -229,6 +229,32 @@
             transform: translateY(-3px);
         }
 
+        .project-item:nth-child(n+4) {
+            display: none;
+        }
+
+        .project-main.show-all .project-item {
+            display: block;
+        }
+
+        #seeMoreBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        #seeMoreBtn:hover {
+            background: #14a049;
+            transform: translateY(-2px);
+        }
+
         .project {
             position: relative;
             padding: 80px 0;
@@ -253,7 +279,6 @@
         .project-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            
         }
 
         .project-item img {
@@ -266,14 +291,13 @@
             padding: 20px;
         }
 
-        .project a{
+        .project a {
             text-decoration: none;
             color: rgb(255, 255, 255);
         }
-        .project a:hover{
+        .project a:hover {
             color: var(--primary);
         }
-
 
         .faq-main {
             position: relative;
@@ -395,11 +419,11 @@
                 <p>Exploring options in cybersecurity, software development and web development</p>
             </div>
             <div class="social">
-                <a href="https://github.com/H4M1DUR"><img src="media/git.png" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/H4M1DUR/"><img src="media/linkedin.png" alt="LinkedIn"></a>
-                <a href="https://web.facebook.com/H4M1DUR"><img src="media/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/h4m1dur/"><img src="media/instra.png" alt="Instagram"></a>
-                <a href="https://x.com/H4M1DUR"><img src="media/twter.png" alt="Twitter"></a>
+                <a href="https://github.com/hamidurshohan"><img src="media/git.png" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/hamidur-shohan/"><img src="media/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://web.facebook.com/750008646764s"><img src="media/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/hamidur_shohan/"><img src="media/instra.png" alt="Instagram"></a>
+                <a href="https://x.com/hamidur_shohan"><img src="media/twter.png" alt="Twitter"></a>
             </div>
         </section>
 
@@ -447,7 +471,17 @@
                         </div>
                     </a>
                 </div>
+                <div class="project-item">
+                    <a href="pages/radar.html">
+                        <img src="robot/main.jpeg" alt="Project 4">
+                        <div class="project-text">
+                            <h2>Radar System Using Ultrasonic Sensor and Arduino Uno</h2>
+                            <p>Arduino-Powered Ultrasonic Radar: Real-Time Object Detection and Visualization</p>
+                        </div>
+                    </a>
+                </div>
             </div>
+            <button id="seeMoreBtn">See More</button>
         </section>
 
         <section class="faq-main" id="qna">
@@ -474,6 +508,13 @@
                 </div>
             </div>
         </section>
+        <script>
+            document.getElementById('seeMoreBtn').addEventListener('click', function() {
+                const projectMain = document.querySelector('.project-main');
+                projectMain.classList.toggle('show-all');
+                this.textContent = projectMain.classList.contains('show-all') ? 'Show Less' : 'See More';
+            });
+        </script>
     </main>
 </body>
 
